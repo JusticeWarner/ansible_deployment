@@ -3,22 +3,22 @@
 - hosts: all
   tasks:
 
-  - name: install docker 
+  - name: uninstall docker 
     ansible.builtin.yum:
       name: docker-ce-cli.x86_64
-      state: latest
+      state: absent
 
-  - name: install containerd
+  - name: uninstall containerd
     yum: 
       name: containerd.io.x86_64
-      state: latest
+      state: absent
 
-  - name: install docker-ce
+  - name: uninstall docker-ce
     yum:
       name: docker-ce.x86_64
-      state: latest
+      state: absent
 
-  - name: install docker rootless
+  - name: uninstall docker rootless
     yum:
       name: docker-ce-rootless-extras.x86_64
-      state: latest
+      state: absent

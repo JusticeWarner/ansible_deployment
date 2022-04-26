@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  tasks:
+
+  - name: pull node image
+    docker_image: 
+      name: node
+      source: pull
+      
