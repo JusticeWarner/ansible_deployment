@@ -1,0 +1,41 @@
+---
+
+- hosts: all
+  tasks:
+
+  - name: install zsh
+    ansible.builtin.yum:
+      name: zsh.x86_64
+      state: latest
+
+  - name: install zsh-syntax
+    ansible.builtin.yum:
+      name: zsh-syntax-highlighting.noarch
+      state: latest
+
+
+  - name: install zsh-completion
+    ansible.builtin.yum:
+      name: cekit-zsh-completion.noarch
+      state: latest
+
+  - name: install zsh-completion
+    ansible.builtin.yum:
+      name: autojump-zsh.noarch
+      state: latest
+
+      autojump-zsh.noarch
+
+  - name: clone syntax_highlighting
+    ansible.builtin.git:
+      clone: sh-users/zsh-syntax-highlighting.git
+
+
+  - name: clone zsh-autosuggestions
+    ansible.builtin.git:
+      clone: zsh-users/zsh-autosuggestions
+
+  - name: clone zsh_vim_profile
+    ansible.builtin.git:
+      clone: JusticeWarner/zsh-vim-profile.git
+
